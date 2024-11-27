@@ -76,4 +76,17 @@ function findClosestAndFurthest(cities) {
 }
 
 function displayCities(cities) {
+    cities.forEach((city) => {
+        const cityBox = document.createElement("div");
+        cityBox.classList.add("cityBox");
+        cityBox.textContent = city.name;
+    
+        if (city.name === closestElement.textContent) {
+          cityBox.classList.add("closest");
+        } else if (city.name === furthestElement.textContent) {
+          cityBox.classList.add("furthest");
+        }
+    
+        citiesContainer.appendChild(cityBox);
+      });
 }
