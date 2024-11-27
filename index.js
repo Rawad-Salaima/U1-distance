@@ -54,4 +54,23 @@ function generateTable(cities) {
 }
 
 function findClosestAndFurthest(cities) {
+    let closest = { city: null, distance: Infinity };
+  let furthest = { city: null, distance: -Infinity };
+
+  cities.forEach((city) => {
+    cities.forEach((otherCity) => {
+      if (city === otherCity) return;
+      
+      const distance = calculateDistance(city.latitude, city.longitude, otherCity.latitude, otherCity.longitude);
+      if (distance < closest.distance) {
+        closest = { city: otherCity, distance };
+      }
+      if (distance > furthest.distance) {
+        furthest = { city: otherCity, distance };
+      }
+    });
+  });
+
+  closestElement.textContent = closest.city.name;
+  furthestElement.textContent = furthest.city.name;
 }
