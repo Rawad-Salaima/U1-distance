@@ -25,4 +25,30 @@ function generateTable(cities) {
         headerCell.textContent = city.name;
         headerRow.appendChild(headerCell);
       });
+
+      fragment.appendChild(headerRow);
+
+  cities.forEach((city) => {
+    const row = document.createElement("div");
+    row.classList.add("row");
+
+    const nameCell = document.createElement("div");
+    nameCell.classList.add("cell", "head_row");
+    nameCell.textContent = city.name;
+    row.appendChild(nameCell);
+
+    cities.forEach((otherCity) => {
+      const distanceCell = document.createElement("div");
+      distanceCell.classList.add("cell");
+      distanceCell.textContent =
+        city === otherCity
+          ? "—"
+          : calculateDistance(city.latitude, city.longitude, otherCity.latitude, otherCity.longitude).toFixed(1);
+      row.appendChild(distanceCell);
+    });
+
+    fragment.appendChild(row);
+  });
+
+  tableElement.appendChild(fragment);
 }
