@@ -90,3 +90,7 @@ function displayCities(cities) {
         citiesContainer.appendChild(cityBox);
       });
 }
+
+function checkCityInDatabase(cities) {
+    
+}
