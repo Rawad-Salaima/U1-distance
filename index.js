@@ -92,5 +92,18 @@ function displayCities(cities) {
 }
 
 function checkCityInDatabase(cities) {
-    
+    const cityName = prompt("Please enter a city name:").trim();
+
+  if (!cityName) {
+    alert("You didn't enter a city name!");
+    return;
+  }
+
+  const city = cities.find((c) => c.name.toLowerCase() === cityName.toLowerCase());
+
+  if (city) {
+    alert(`The city "${city.name}" exists in the database.`);
+  } else {
+    alert(`The city "${cityName}" does not exist in the database.`);
+  }
 }
