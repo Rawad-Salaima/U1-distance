@@ -18,4 +18,11 @@ function generateTable(cities) {
     const emptyHeader = document.createElement("div");
     emptyHeader.classList.add("cell");
     headerRow.appendChild(emptyHeader);
+
+    cities.forEach((city) => {
+        const headerCell = document.createElement("div");
+        headerCell.classList.add("cell", "head_column");
+        headerCell.textContent = city.name;
+        headerRow.appendChild(headerCell);
+      });
 }
