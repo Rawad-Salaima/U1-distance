@@ -112,3 +112,15 @@ const tableElement = document.getElementById("table");
 const closestElement = document.getElementById("closest");
 const furthestElement = document.getElementById("furthest");
 const citiesContainer = document.getElementById("cities");
+
+function main(cities) {
+    checkCityInDatabase(cities);
+    generateTable(cities);
+    findClosestAndFurthest(cities);
+    displayCities(cities);
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    main(cities);
+  });
+  
