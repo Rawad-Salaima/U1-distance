@@ -74,3 +74,6 @@ function findClosestAndFurthest(cities) {
   closestElement.textContent = closest.city.name;
   furthestElement.textContent = furthest.city.name;
 }
+
+function displayCities(cities) {
+}
