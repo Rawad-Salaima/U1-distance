@@ -52,3 +52,6 @@ function generateTable(cities) {
 
   tableElement.appendChild(fragment);
 }
+
+function findClosestAndFurthest(cities) {
+}
