@@ -107,3 +107,8 @@ function checkCityInDatabase(cities) {
     alert(`The city "${cityName}" does not exist in the database.`);
   }
 }
+
+const tableElement = document.getElementById("table");
+const closestElement = document.getElementById("closest");
+const furthestElement = document.getElementById("furthest");
+const citiesContainer = document.getElementById("cities");
