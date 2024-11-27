@@ -11,5 +11,11 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 }
 
 function generateTable(cities) {
-    
+    const fragment = document.createDocumentFragment();
+
+    const headerRow = document.createElement("div");
+    headerRow.classList.add("row", "head_row");
+    const emptyHeader = document.createElement("div");
+    emptyHeader.classList.add("cell");
+    headerRow.appendChild(emptyHeader);
 }
